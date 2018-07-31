@@ -27,10 +27,12 @@ $(document).ready( function() {
     function initializeGame() {
         // Generates number between 19 and 120
         gameData.randomNumber = Math.floor( Math.random() * 102) + 19;
-        gameData.red = Math.floor( Math.random() * 12) + 1;
-        gameData.blue = Math.floor( Math.random() * 12) + 1;
-        gameData.yellow = Math.floor( Math.random() * 12) + 1;
-        gameData.green = Math.floor( Math.random() * 12) + 1;
+
+        // Avoiding repetition (aka typing)
+        ["red", "blue", "yellow", "green"].forEach( function(color) {
+            gameData[color] = Math.floor( Math.random() * 12) + 1;
+        });
+
         gameData.totalScore = 0;
 
         console.log("Starting a new game: ");
@@ -78,6 +80,7 @@ $(document).ready( function() {
         }
     });
 
+    // Below runs once when the page is loaded.
     initializeGame();
 
 });
