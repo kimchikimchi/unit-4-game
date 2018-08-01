@@ -45,8 +45,8 @@ $(document).ready( function() {
         $("#displayMsg").text(gameData.displayMsg);
         $("#randomNumber").text(gameData.randomNumber);
         $("#totalScore").text(gameData.totalScore);
-        $("#wins").text(gameData.wins);
-        $("#losses").text(gameData.losses);
+        $("#wins").text(`Wins: ${gameData.wins}`);
+        $("#losses").text(`Losses: ${gameData.losses}`);
     }
 
     function addGemValue(color) {
